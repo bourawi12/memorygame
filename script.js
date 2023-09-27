@@ -45,7 +45,7 @@ const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
                         second = id ;
                         
                         if (cards[first]!=cards[second] ){
-                            setTimeout(after,1500);
+                            setTimeout(after,1200);
                            
                         }
                         else{
@@ -61,13 +61,14 @@ const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
                             }
                             
                             
+                            
                         }
                         number=0;
                     }
                     
                 }
                 console.log(number);
-
+                
             }
             function after(){
                 document.getElementById(first).src = "back.jpg";
