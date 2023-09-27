@@ -3,7 +3,7 @@
     <head>
         <script>
             const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
-            let number=0;
+            let number=0,score=0;
             let first,second ;
             function flip(){
                 let id = event.target.id ;
@@ -17,18 +17,25 @@
                     if (number == 1){
                         first=id;
                     }
+                    score++;
                     
                     else{
                         second = id ;
-                        number=0;
+                        
                         if (cards[first]!=cards[second]){
-                            document.getElementById(first).src = "back.jpg";
-                            document.getElementById(second).src = "back.jpg"; 
+                            setTimeout(after,2000);
+                           
                         }
+                        number=0;
                     }
                     
                 }
                 console.log(number);
+
+            }
+            function after(){
+                document.getElementById(first).src = "back.jpg";
+                            document.getElementById(second).src = "back.jpg"; 
 
             }
             
