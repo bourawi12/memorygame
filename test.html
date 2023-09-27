@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
+            function flip(){
+                let id = event.target.id ;
+                console.log("i m in flip : "+document.getElementById(id).src);
+                if (document.getElementById(id).src =="http://127.0.0.1/memorygametest/" + "back.jpg" ){
+                    document.getElementById(id).src = cards[id] + ".jpg";
+                    console.log("i m in flip1");
+                }else{
+                    document.getElementById(id).src = 'back.jpg';
+                    console.log("i m in flip2");
+                }
+            }
+            
+            
+        </script>
+    </head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+
+<div><img id="0" src="back.jpg" style="width:100px" onclick="flip()" >
+    <img id="1" src="back.jpg" style="width:100px" onclick="flip()" >
+    <img id="2" src="back.jpg" style="width:100px" onclick="flip()" >
+    <img id="3" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+    <div><img id="4" src="back.jpg" style="width:100px" onclick="flip()" >
+        <img id="5" src="back.jpg" style="width:100px" onclick="flip()" >
+        <img id="6" src="back.jpg" style="width:100px" onclick="flip()" >
+        <img id="7" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+        <div><img id="8" src="back.jpg" style="width:100px" onclick="flip()" >
+            <img id="9" src="back.jpg" style="width:100px" onclick="flip()" >
+            <img id="10" src="back.jpg" style="width:100px" onclick="flip()" >
+            <img id="11" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+
+
+
+
+
+</body>
+</html>
