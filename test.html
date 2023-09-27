@@ -3,16 +3,33 @@
     <head>
         <script>
             const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
+            let number=0;
+            let first,second ;
             function flip(){
                 let id = event.target.id ;
+                
                 console.log("i m in flip : "+document.getElementById(id).src);
                 if (document.getElementById(id).src =="http://127.0.0.1/memorygametest/" + "back.jpg" ){
                     document.getElementById(id).src = cards[id] + ".jpg";
                     console.log("i m in flip1");
-                }else{
-                    document.getElementById(id).src = 'back.jpg';
-                    console.log("i m in flip2");
+                    console.log(id);
+                    number=number+1;
+                    if (number == 1){
+                        first=id;
+                    }
+                    
+                    else{
+                        second = id ;
+                        number=0;
+                        if (cards[first]!=cards[second]){
+                            document.getElementById(first).src = "back.jpg";
+                            document.getElementById(second).src = "back.jpg"; 
+                        }
+                    }
+                    
                 }
+                console.log(number);
+
             }
             
             
