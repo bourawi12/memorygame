@@ -2,9 +2,14 @@
 <html>
     <head>
         <script>
-            const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
-            let number=0,score=0;
+            const images=["1","2","3","4","5","6"];
+            const cards=[];
+            let number=0,score1=0,score2=0;
             let first,second ;
+            let tour=1;
+            function start(){
+                for(i=0;i<)
+            }
             function flip(){
                 let id = event.target.id ;
                 
@@ -17,14 +22,28 @@
                     if (number == 1){
                         first=id;
                     }
-                    score++;
+                    
                     
                     else{
                         second = id ;
                         
-                        if (cards[first]!=cards[second]){
+                        if (cards[first]!=cards[second] ){
                             setTimeout(after,2000);
                            
+                        }
+                        else{
+                            if(tour==1){
+                                score1++;
+                            console.log(score1);
+                    document.getElementById('score1').innerHTML=score1;
+
+                            }else{
+                                score2++;
+                            console.log(score2);
+                    document.getElementById('score2').innerHTML=score2;
+                            }
+                            
+                            
                         }
                         number=0;
                     }
@@ -36,6 +55,11 @@
             function after(){
                 document.getElementById(first).src = "back.jpg";
                             document.getElementById(second).src = "back.jpg"; 
+                            if (tour==1){
+                                tour=2;
+                            }else{
+                                tour=1;
+                            }
 
             }
             
@@ -43,6 +67,10 @@
         </script>
     </head>
 <body>
+    <h1>score player 1 :</h1>
+    <h1 id="score1">0</h1>
+    <h1>score player 2 :</h1>
+    <h1 id="score2">0</h1>
 
 <h2>What Can JavaScript Do?</h2>
 
