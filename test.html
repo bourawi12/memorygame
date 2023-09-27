@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
         <script>
             
             
@@ -10,7 +11,10 @@
             let number=0,score1=0,score2=0;
             let first,second ;
             let tour=1;
+            
             function shuffle(array) {
+                document.getElementById('player1').style.color ="#ffff3f" ;
+                                document.getElementById('score1').style.color ="#ffff3f" ;
   let currentIndex = array.length,  randomIndex;
 
   // While there remain elements to shuffle.
@@ -48,7 +52,7 @@
                         second = id ;
                         
                         if (cards[first]!=cards[second] ){
-                            setTimeout(after,2000);
+                            setTimeout(after,1500);
                            
                         }
                         else{
@@ -77,8 +81,16 @@
                             document.getElementById(second).src = "back.jpg"; 
                             if (tour==1){
                                 tour=2;
+                                document.getElementById('player2').style.color ="#ffff3f" ;
+                                document.getElementById('score2').style.color ="#ffff3f" ;
+                                document.getElementById('player1').style.color ="#ffff" ;
+                                document.getElementById('score1').style.color ="#ffff" ;
                             }else{
                                 tour=1;
+                                document.getElementById('player1').style.color ="#ffff3f" ;
+                                document.getElementById('score1').style.color ="#ffff3f" ;
+                                document.getElementById('player2').style.color ="#ffff" ;
+                                document.getElementById('score2').style.color ="#ffff" ;
                             }
 
             }
@@ -88,36 +100,42 @@
     </head>
 <body onload="shuffle(cards)">
     
-    
-    
-    <h1>score player 1 :</h1>
-    <h1 id="score1">0</h1>
-    <h1>score player 2 :</h1>
-    <h1 id="score2">0</h1>
-
-<h2>What Can JavaScript Do?</h2>
-
-<p>JavaScript can change HTML attribute values.</p>
-
-<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
-
-
-<div><img id="0" src="back.jpg" style="width:100px" onclick="flip()" >
-    <img id="1" src="back.jpg" style="width:100px" onclick="flip()" >
-    <img id="2" src="back.jpg" style="width:100px" onclick="flip()" >
-    <img id="3" src="back.jpg" style="width:100px" onclick="flip()" ></div>
-    <div><img id="4" src="back.jpg" style="width:100px" onclick="flip()" >
-        <img id="5" src="back.jpg" style="width:100px" onclick="flip()" >
-        <img id="6" src="back.jpg" style="width:100px" onclick="flip()" >
-        <img id="7" src="back.jpg" style="width:100px" onclick="flip()" ></div>
-        <div><img id="8" src="back.jpg" style="width:100px" onclick="flip()" >
-            <img id="9" src="back.jpg" style="width:100px" onclick="flip()" >
-            <img id="10" src="back.jpg" style="width:100px" onclick="flip()" >
-            <img id="11" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+    <table >
+        <tr>
+            <th id="player1">score player 1 :</th>
+            <th id="player2">score player 2 :</th>
+        </tr>
+        <tr>
+            <td id="score1">0</td>
+            <td id="score2">0</td>
+        </tr>
+    </table>
+  
 
 
+<div class="section1">
+<div  ><div class="section2"><img id="0" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="1" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="2" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      </div>
+      <div  ><div class="section2"><img id="3" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="4" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="5" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      </div>
+      <div  ><div class="section2"><img id="6" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="7" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="8" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      </div>
+      <div  ><div class="section2"><img id="9" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="10" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      <div class="section2"><img id="11" src="back.jpg" style="width:100px" onclick="flip()" ></div>
+      </div>
 
 
-<div><button onclick="window.location.reload()">ReStart</button></div>
+        </div>
+
+
+
+<div class="container"><div class="center"><button onclick="window.location.reload()">reset</button></div></div>
 </body>
 </html>
