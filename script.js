@@ -1,36 +1,38 @@
-const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
+let images=["1","2","3","4","5","6"];
+let compteur=[0,0,0,0,0,0];
+let cards=[];
+//const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
             
             
             let number=0,score1=0,score2=0;
             let first,second ;
             let tour=1;
+            function shuffle(){
+                for (let i=0;i< images.length*2;i++){
+                    while(true){
+                        let x=Math.floor(Math.random()*images.length);
+                        if (compteur[x]<2){
+                            cards.push(images[x]);
+                            compteur[x]++;
+                            break;
+                        }
+                    }
+                    
+                }
+                console.log("cards first call :",cards);
+            }
             
-            function shuffle(array) {
-                document.getElementById('player1').style.color ="#ffff3f" ;
-                                document.getElementById('score1').style.color ="#ffff3f" ;
-  let currentIndex = array.length,  randomIndex;
 
-  // While there remain elements to shuffle.
-  while (currentIndex > 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
 
             function flip(){
             
                 let id = event.target.id ;
                 
-                console.log("i m in flip : "+document.getElementById(id).src);
-                if (document.getElementById(id).src =="http://127.0.0.1/memorygametest/" + "back.jpg" ){
+                
+               
+                
+                let t=document.getElementById(id).src.split("/");
+                if (t[t.length-1]== "back.jpg" ){
                     document.getElementById(id).src = cards[id] + ".jpg";
                     console.log("i m in flip1");
                     console.log(id);
@@ -88,5 +90,6 @@ const cards=["1","2","3","4","5","6","1","2","3","4","5","6"];
                             }
 
             }
+            
             
          
